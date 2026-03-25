@@ -19,11 +19,11 @@ public class App {
               case 2:
                   ejercicios.leerArchivo("saludo.txt");
                   break;
-            /*
               case 3:
-                  ejs.ej3();
+                  ejercicios.ejercicio3();
                   break;
             
+            /*
               case 4:
                   ejs.ej4();
                   break;

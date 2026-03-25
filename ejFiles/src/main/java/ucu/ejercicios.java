@@ -52,14 +52,22 @@ public class ejercicios {
         for (String fruta : frutas) {
 
             try {
-                 bw.write(fruta);
+                bw.write(fruta);
                 bw.newLine();
   
             } catch (Exception e) {
+                   
                 System.out.println("Error" + e.getMessage());
             }
-                    }
+        }
 
+        try {
+            bw.close();
+            
+        } catch (Exception e) {
+            
+                System.out.println("Error" + e.getMessage());
+        }
 
         
     }
