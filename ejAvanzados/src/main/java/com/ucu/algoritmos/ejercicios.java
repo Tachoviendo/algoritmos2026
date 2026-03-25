@@ -156,4 +156,32 @@ public class ejercicios {
         System.out.println("\nTodos los vehículos fueron creados correctamente");
         System.out.println("usando super() para inicializar los atributos heredados.");
     }
+
+    // Ejercicio 8: Clase abstracta - Figura
+    public void ej8() {
+        System.out.println("=== Ejercicio 8: Clase abstracta Figura ===\n");
+
+        // Crear array de figuras (polimorfismo)
+        Figura[] figuras = new Figura[4];
+
+        figuras[0] = new Circulo(5);
+        figuras[1] = new Circulo(3.5);
+        figuras[2] = new Triangulo(10, 8);
+        figuras[3] = new Triangulo(6, 4);
+
+        // Calcular el área de cada figura
+        System.out.println("Calculando áreas de todas las figuras:\n");
+        for (int i = 0; i < figuras.length; i++) {
+            System.out.println("Figura " + (i + 1) + ":");
+            figuras[i].describir();
+            System.out.println();
+        }
+
+        // Calcular área total
+        double areaTotal = 0;
+        for (Figura figura : figuras) {
+            areaTotal += figura.area();
+        }
+        System.out.println("Área total de todas las figuras: " + areaTotal);
+    }
 }
