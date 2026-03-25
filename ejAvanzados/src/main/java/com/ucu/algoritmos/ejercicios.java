@@ -307,4 +307,87 @@ public class ejercicios {
         System.out.println("\nProducto más barato: " + productos.get(0));
         System.out.println("Producto más caro: " + productos.get(productos.size() - 1));
     }
+
+    // Ejercicio 13: Herencia múltiple vía interfaces
+    public void ej13() {
+        System.out.println("\n=== Ejercicio 13: Herencia múltiple vía interfaces ===\n");
+
+        Pato pato = new Pato();
+        Avion avion = new Avion();
+        Pez pez = new Pez();
+
+        System.out.println("El Pato (implementa Volador Y Nadador):");
+        pato.volar();
+        pato.aterrizar();
+        pato.nadar();
+        pato.salirDelAgua();
+
+        System.out.println("\n" + "-".repeat(50));
+
+        System.out.println("\nEl Avión (solo Volador):");
+        avion.volar();
+        avion.aterrizar();
+
+        System.out.println("\n" + "-".repeat(50));
+
+        System.out.println("\nEl Pez (solo Nadador):");
+        pez.nadar();
+        pez.salirDelAgua();
+
+        System.out.println("\n" + "-".repeat(50));
+
+        // Demostrar polimorfismo con tipos de interface
+        System.out.println("\nPolimorfismo con interfaces:");
+
+        Volador v = new Pato();
+        System.out.println("Variable tipo Volador con Pato:");
+        v.volar();
+
+        Nadador n = new Pato();
+        System.out.println("\nVariable tipo Nadador con Pato:");
+        n.nadar();
+
+        System.out.println("\nEl Pato puede verse como Volador O como Nadador,");
+        System.out.println("¡pero sigue siendo el mismo objeto con ambas capacidades!");
+    }
+
+    // Ejercicio 14: Clase inmutable - Punto
+    public void ej14() {
+        System.out.println("\n=== Ejercicio 14: Clase inmutable - Punto ===\n");
+
+        Punto p1 = new Punto(3, 4);
+        System.out.println("Punto original: " + p1);
+
+        // Trasladar el punto (retorna un NUEVO punto)
+        Punto p2 = p1.trasladar(2, 1);
+        System.out.println("Después de trasladar(2, 1): " + p2);
+        System.out.println("Punto original sin cambios: " + p1);
+
+        System.out.println("\n" + "-".repeat(50));
+
+        // Rotar el punto (retorna un NUEVO punto)
+        Punto p3 = new Punto(1, 0);
+        System.out.println("\nPunto inicial: " + p3);
+        Punto p4 = p3.rotar(90);
+        System.out.println("Después de rotar 90°: " + p4);
+        System.out.println("Punto original sin cambios: " + p3);
+
+        System.out.println("\n" + "-".repeat(50));
+
+        // Demostrar inmutabilidad
+        System.out.println("\nDemostración de inmutabilidad:");
+        Punto origen = new Punto(0, 0);
+        System.out.println("Origen: " + origen);
+
+        Punto trasladado1 = origen.trasladar(5, 5);
+        Punto trasladado2 = origen.trasladar(3, 3);
+        Punto trasladado3 = origen.trasladar(-2, -2);
+
+        System.out.println("Traslación 1: " + trasladado1);
+        System.out.println("Traslación 2: " + trasladado2);
+        System.out.println("Traslación 3: " + trasladado3);
+        System.out.println("Origen NUNCA cambió: " + origen);
+
+        System.out.println("\n¡La inmutabilidad hace que el código sea más seguro!");
+    }
 }
