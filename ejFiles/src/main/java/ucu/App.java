@@ -16,10 +16,10 @@ public class App {
                   ejercicios.crearArchivo();
                   break;
 
-              /*case 2:
-                  ejs.ej2();
+              case 2:
+                  ejercicios.leerArchivo("saludo.txt");
                   break;
-
+            /*
               case 3:
                   ejs.ej3();
                   break;

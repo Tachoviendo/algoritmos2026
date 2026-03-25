@@ -1,6 +1,8 @@
 package ucu;
 import java.io.FileWriter;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.IOException;
 
 
@@ -24,6 +26,23 @@ public class ejercicios {
         } catch (IOException e){
             System.out.println("Error: "+ e.getMessage());
         }
+    }
+
+    public static void leerArchivo(String file) {
+
+        try {
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+
+            String linea = br.readLine();
+            while (linea != null){
+                System.out.println(linea);
+                linea = br.readLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error: "+ e.getMessage());
+        }
+        
     }
     
 }
