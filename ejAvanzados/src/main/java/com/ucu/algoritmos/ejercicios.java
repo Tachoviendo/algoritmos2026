@@ -242,4 +242,69 @@ public class ejercicios {
         System.out.print("gato2.hacerSonido(): ");
         gato2.hacerSonido();
     }
+
+    // Ejercicio 11: Composición - Biblioteca
+    public void ej11() {
+        System.out.println("=== Ejercicio 11: Composición - Biblioteca ===\n");
+
+        Biblioteca biblioteca = new Biblioteca("Biblioteca Central UCU");
+
+        // Agregar 5 libros
+        biblioteca.agregar(new Libro("Cien años de soledad", "Gabriel García Márquez", "978-0307474728"));
+        biblioteca.agregar(new Libro("1984", "George Orwell", "978-0451524935"));
+        biblioteca.agregar(new Libro("El principito", "Antoine de Saint-Exupéry", "978-0156012195"));
+        biblioteca.agregar(new Libro("Don Quijote", "Miguel de Cervantes", "978-0060934347"));
+        biblioteca.agregar(new Libro("Clean Code", "Robert C. Martin", "978-0132350884"));
+
+        // Listar todos los libros
+        biblioteca.listarTodos();
+
+        // Buscar por ISBN
+        System.out.println("\n" + "-".repeat(50));
+        System.out.println("Búsqueda por ISBN:");
+        String isbnBuscado = "978-0451524935";
+        Libro encontrado = biblioteca.buscarPorISBN(isbnBuscado);
+        if (encontrado != null) {
+            System.out.println("Libro encontrado: " + encontrado);
+        } else {
+            System.out.println("No se encontró el libro con ISBN: " + isbnBuscado);
+        }
+
+        // Búsqueda que no existe
+        String isbnNoExiste = "978-9999999999";
+        Libro noEncontrado = biblioteca.buscarPorISBN(isbnNoExiste);
+        if (noEncontrado == null) {
+            System.out.println("No se encontró el libro con ISBN: " + isbnNoExiste);
+        }
+    }
+
+    // Ejercicio 12: Interface Comparable - ordenar objetos
+    public void ej12() {
+        System.out.println("\n=== Ejercicio 12: Comparable - Ordenar Productos ===\n");
+
+        java.util.ArrayList<Producto> productos = new java.util.ArrayList<>();
+
+        productos.add(new Producto("Notebook", 1200.00));
+        productos.add(new Producto("Mouse", 25.50));
+        productos.add(new Producto("Teclado", 75.00));
+        productos.add(new Producto("Monitor", 350.00));
+        productos.add(new Producto("Auriculares", 50.00));
+
+        System.out.println("Productos antes de ordenar:");
+        for (Producto p : productos) {
+            System.out.println("  " + p);
+        }
+
+        // Ordenar usando Collections.sort()
+        java.util.Collections.sort(productos);
+
+        System.out.println("\nProductos después de ordenar (de menor a mayor precio):");
+        for (Producto p : productos) {
+            System.out.println("  " + p);
+        }
+
+        // Mostrar el más barato y el más caro
+        System.out.println("\nProducto más barato: " + productos.get(0));
+        System.out.println("Producto más caro: " + productos.get(productos.size() - 1));
+    }
 }
