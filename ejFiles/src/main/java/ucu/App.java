@@ -13,21 +13,21 @@ public class App {
           int eleccion = e.nextInt();
           switch (eleccion) {
               case 1:
-                  ejercicios.crearArchivo("saludo");
+                  ejercicios.ejercicio1();
                   break;
 
               case 2:
-                  ejercicios.leerArchivo("saludo.txt");
+                  ejercicios.ejercicio2();
                   break;
               case 3:
                   ejercicios.ejercicio3();
                   break;
             
-            /*
               case 4:
-                  ejs.ej4();
+                  ejercicios.ejercicio4();
                   break;
-
+                
+            /*
               case 5:
                   ejs.ej5();
                   break;
