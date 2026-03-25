@@ -476,4 +476,165 @@ public class ejercicios {
         System.out.println("config1 == config2: " + (config1 == config2));
         System.out.println("\n¡Solo existe UNA instancia de Configuracion en toda la aplicación!");
     }
+
+    // Ejercicio 17: Clase genérica Pila<T>
+    public void ej17() {
+        System.out.println("\n=== Ejercicio 17: Clase genérica Pila<T> ===\n");
+
+        // Pila de Integer
+        Pila<Integer> pilaEnteros = new Pila<>();
+        System.out.println("Pila de Integer:");
+        pilaEnteros.push(10);
+        pilaEnteros.push(20);
+        pilaEnteros.push(30);
+        System.out.println("Estado: " + pilaEnteros);
+        System.out.println("Peek: " + pilaEnteros.peek());
+        System.out.println("Pop: " + pilaEnteros.pop());
+        System.out.println("Estado después de pop: " + pilaEnteros);
+
+        System.out.println("\n" + "-".repeat(50));
+
+        // Pila de String
+        Pila<String> pilaStrings = new Pila<>();
+        System.out.println("\nPila de String:");
+        pilaStrings.push("Hola");
+        pilaStrings.push("Mundo");
+        pilaStrings.push("Java");
+        System.out.println("Estado: " + pilaStrings);
+        System.out.println("Size: " + pilaStrings.size());
+
+        System.out.println("\nVaciando la pila:");
+        while (!pilaStrings.isEmpty()) {
+            System.out.println("  Pop: " + pilaStrings.pop());
+        }
+        System.out.println("¿Está vacía? " + pilaStrings.isEmpty());
+
+        System.out.println("\n" + "-".repeat(50));
+
+        // Demostrar excepción
+        System.out.println("\nIntentando pop en pila vacía:");
+        try {
+            pilaStrings.pop();
+        } catch (java.util.EmptyStackException ex) {
+            System.out.println("ERROR: " + ex.getClass().getSimpleName());
+        }
+    }
+
+    // Ejercicio 18: Iterator personalizado
+    public void ej18() {
+        System.out.println("\n=== Ejercicio 18: Iterator personalizado - Rango ===\n");
+
+        System.out.println("Recorriendo rango de 1 a 10 con for-each:");
+        for (int n : new Rango(1, 10)) {
+            System.out.print(n + " ");
+        }
+
+        System.out.println("\n\n" + "-".repeat(50));
+
+        System.out.println("\nRecorriendo rango de 5 a 15:");
+        for (int n : new Rango(5, 15)) {
+            System.out.print(n + " ");
+        }
+
+        System.out.println("\n\n" + "-".repeat(50));
+
+        System.out.println("\nSumando números del 1 al 100:");
+        int suma = 0;
+        for (int n : new Rango(1, 100)) {
+            suma += n;
+        }
+        System.out.println("Suma total: " + suma);
+
+        System.out.println("\n" + "-".repeat(50));
+        System.out.println("\n¡El for-each llama internamente hasNext() y next()!");
+    }
+
+    // Ejercicio 19: Patrón Observer
+    public void ej19() {
+        System.out.println("\n=== Ejercicio 19: Patrón Observer ===\n");
+
+        SensorTemperatura sensor = new SensorTemperatura(30.0);
+
+        // Crear observadores
+        Alarma alarma = new Alarma();
+        Logger logger = new Logger();
+
+        // Registrar observadores
+        System.out.println("Registrando observadores:");
+        sensor.registrar(alarma);
+        sensor.registrar(logger);
+
+        System.out.println("\n" + "-".repeat(50));
+
+        // Cambiar temperatura (sin superar umbral)
+        System.out.println("\nCambiando temperatura a 25°C:");
+        sensor.setTemperatura(25.0);
+
+        System.out.println("\n" + "-".repeat(50));
+
+        // Cambiar temperatura (superando umbral)
+        System.out.println("\nCambiando temperatura a 35°C:");
+        sensor.setTemperatura(35.0);
+
+        System.out.println("\n" + "-".repeat(50));
+
+        // Otro cambio superando umbral
+        System.out.println("\nCambiando temperatura a 40°C:");
+        sensor.setTemperatura(40.0);
+
+        System.out.println("\n" + "-".repeat(50));
+        System.out.println("\nEl patrón Observer desacopla el sensor de los observadores.");
+        System.out.println("El sensor no sabe qué hacen los observadores, solo les notifica.");
+    }
+
+    // Ejercicio 20: Mini sistema integrador
+    public void ej20() {
+        System.out.println("\n=== Ejercicio 20: Mini Sistema de Tienda ===\n");
+
+        // Crear productos
+        ProductoTienda p1 = new ProductoTienda("Laptop", 1200.00, 5);
+        ProductoTienda p2 = new ProductoTienda("Mouse", 25.00, 20);
+        ProductoTienda p3 = new ProductoTienda("Teclado", 75.00, 15);
+        ProductoTienda p4 = new ProductoTienda("Monitor", 350.00, 8);
+        ProductoTienda p5 = new ProductoTienda("Auriculares", 50.00, 30);
+
+        // Crear clientes
+        Cliente cliente1 = new Cliente("Ana García");
+        Cliente cliente2 = new Cliente("Carlos López");
+
+        System.out.println("=== Cliente 1: " + cliente1.getNombre() + " ===");
+        cliente1.getCarrito().agregar(p1);
+        cliente1.getCarrito().agregar(p2);
+        cliente1.getCarrito().agregar(p3);
+
+        System.out.println("\n=== Cliente 2: " + cliente2.getNombre() + " ===");
+        cliente2.getCarrito().agregar(p4);
+        cliente2.getCarrito().agregar(p5);
+        cliente2.getCarrito().agregar(p2);
+
+        System.out.println("\n" + "=".repeat(50));
+
+        // Procesar compras
+        cliente1.procesarCompra();
+
+        System.out.println("\n" + "=".repeat(50));
+
+        cliente2.procesarCompraConDescuento(10);
+
+        System.out.println("\n" + "=".repeat(50));
+
+        // Probar eliminar producto
+        System.out.println("\n=== Modificando carrito de Cliente 1 ===");
+        cliente1.getCarrito().quitar(p2);
+        cliente1.getCarrito().mostrarCarrito();
+
+        System.out.println("\n" + "=".repeat(50));
+        System.out.println("\n¡Sistema integrador completo!");
+        System.out.println("Conceptos aplicados:");
+        System.out.println("  - Clases y objetos");
+        System.out.println("  - Encapsulamiento");
+        System.out.println("  - Composición (Cliente tiene Carrito)");
+        System.out.println("  - Interfaces (Descuentable)");
+        System.out.println("  - Polimorfismo");
+    }
 }
