@@ -210,4 +210,36 @@ public class ejercicios {
 
         System.out.println("Total de documentos: " + documentos.size());
     }
+
+    // Ejercicio 10: Polimorfismo en acción
+    public void ej10() {
+        System.out.println("=== Ejercicio 10: Polimorfismo - Animales ===\n");
+
+        // Crear array de Animal con instancias de diferentes tipos
+        Animal[] animales = { new Perro(), new Gato(), new Vaca() };
+
+        System.out.println("Haciendo que cada animal haga su sonido:\n");
+        for (int i = 0; i < animales.length; i++) {
+            System.out.print("Animal " + (i + 1) + ": ");
+            animales[i].hacerSonido(); // ¿Qué ejecuta?
+        }
+
+        System.out.println("\n" + "-".repeat(50));
+        System.out.println("Reflexión:");
+        System.out.println("Aunque la variable es de tipo Animal, Java ejecuta");
+        System.out.println("el método de la clase REAL del objeto (despacho dinámico).");
+        System.out.println("Esto se decide en tiempo de ejecución, no en compilación.");
+        System.out.println("-".repeat(50));
+
+        // Demostración adicional con más animales
+        System.out.println("\nMás animales:");
+        Animal perro2 = new Perro();
+        Animal gato2 = new Gato();
+
+        System.out.print("perro2.hacerSonido(): ");
+        perro2.hacerSonido();
+
+        System.out.print("gato2.hacerSonido(): ");
+        gato2.hacerSonido();
+    }
 }
