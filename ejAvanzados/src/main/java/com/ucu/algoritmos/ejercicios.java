@@ -108,4 +108,25 @@ public class ejercicios {
         System.out.println("Número del primer contador: " + c1.getNumero());
         System.out.println("Número del segundo contador: " + c2.getNumero());
     }
+
+    // Ejercicio 6: Herencia simple - Vehiculo y sus subclases
+    public void ej6() {
+        System.out.println("=== Ejercicio 6: Herencia - Vehículos ===\n");
+
+        Auto auto = new Auto("Toyota", "Corolla", 180, 4);
+        System.out.println("Descripción del Auto:");
+        auto.describir();
+
+        System.out.println("\n" + "-".repeat(40) + "\n");
+
+        Moto moto = new Moto("Harley-Davidson", "Street 750", 160, false);
+        System.out.println("Descripción de la Moto:");
+        moto.describir();
+
+        System.out.println("\n" + "-".repeat(40) + "\n");
+
+        Moto motoConSidecar = new Moto("Ural", "Gear-Up", 105, true);
+        System.out.println("Descripción de la Moto con sidecar:");
+        motoConSidecar.describir();
+    }
 }
