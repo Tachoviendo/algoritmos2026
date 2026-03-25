@@ -20,9 +20,9 @@ public class CuentaBancaria {
 
     public void retirar(double monto) {
         if (monto > saldo) {
-            System.out.println("Saldo insuficiente");
+            throw new SaldoInsuficienteException(monto, saldo);
         } else if (monto <= 0) {
-            System.out.println("El monto a retirar debe ser positivo.");
+            throw new IllegalArgumentException("El monto a retirar debe ser positivo.");
         } else {
             saldo -= monto;
             System.out.println("Retiro exitoso. Nuevo saldo: $" + saldo);

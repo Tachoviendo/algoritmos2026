@@ -390,4 +390,90 @@ public class ejercicios {
 
         System.out.println("\n¡La inmutabilidad hace que el código sea más seguro!");
     }
+
+    // Ejercicio 15: Excepciones personalizadas
+    public void ej15() {
+        System.out.println("\n=== Ejercicio 15: Excepciones personalizadas ===\n");
+
+        CuentaBancaria cuenta = new CuentaBancaria("Juan Pérez", 1000.0);
+        cuenta.mostrarSaldo();
+
+        try {
+            System.out.println("\nIntentando retirar $500...");
+            cuenta.retirar(500);
+        } catch (SaldoInsuficienteException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        }
+
+        System.out.println("\n" + "-".repeat(50));
+
+        try {
+            System.out.println("\nIntentando retirar $800 (debería fallar)...");
+            cuenta.retirar(800);
+        } catch (SaldoInsuficienteException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+            System.out.println("Detalles:");
+            System.out.println("  - Monto solicitado: $" + ex.getMontoSolicitado());
+            System.out.println("  - Saldo disponible: $" + ex.getSaldoDisponible());
+            System.out.println("  - Faltante: $" + ex.getFaltante());
+        }
+
+        System.out.println("\n" + "-".repeat(50));
+
+        try {
+            System.out.println("\nIntentando retirar -100 (monto negativo)...");
+            cuenta.retirar(-100);
+        } catch (IllegalArgumentException ex) {
+            System.out.println("ERROR: " + ex.getMessage());
+        }
+
+        System.out.println("\n" + "-".repeat(50));
+        cuenta.mostrarSaldo();
+    }
+
+    // Ejercicio 16: Patrón Singleton
+    public void ej16() {
+        System.out.println("\n=== Ejercicio 16: Patrón Singleton ===\n");
+
+        // Obtener la instancia (primera vez, se crea)
+        Configuracion config1 = Configuracion.getInstance();
+        System.out.println("Primera instancia obtenida");
+
+        // Configurar algunos valores
+        config1.set("servidor", "localhost");
+        config1.set("puerto", "8080");
+        config1.set("usuario", "admin");
+
+        System.out.println("\nConfiguraciones en config1:");
+        config1.mostrarTodas();
+
+        System.out.println("\n" + "-".repeat(50));
+
+        // Obtener "otra" instancia (pero es la misma)
+        Configuracion config2 = Configuracion.getInstance();
+        System.out.println("\nSegunda instancia obtenida");
+
+        System.out.println("\nConfiguraciones en config2:");
+        config2.mostrarTodas();
+
+        System.out.println("\n" + "-".repeat(50));
+
+        // Modificar desde config2
+        config2.set("base_datos", "mysql");
+        config2.set("timeout", "30");
+
+        System.out.println("\nDespués de agregar valores desde config2:");
+        System.out.println("\nconfig1 tiene " + config1.cantidadPropiedades() + " propiedades:");
+        config1.mostrarTodas();
+
+        System.out.println("\nconfig2 tiene " + config2.cantidadPropiedades() + " propiedades:");
+        config2.mostrarTodas();
+
+        System.out.println("\n" + "-".repeat(50));
+
+        // Demostrar que son la misma instancia
+        System.out.println("\n¿config1 y config2 son el MISMO objeto?");
+        System.out.println("config1 == config2: " + (config1 == config2));
+        System.out.println("\n¡Solo existe UNA instancia de Configuracion en toda la aplicación!");
+    }
 }
