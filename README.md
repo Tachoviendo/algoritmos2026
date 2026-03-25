@@ -5,3 +5,4 @@
 
 ## Cómo crear un proyecto con mvn
 `mvn archetype:generate`
+

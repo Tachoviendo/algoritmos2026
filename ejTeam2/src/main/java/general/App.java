@@ -1,4 +1,4 @@
-package ucu;
+package general;
 
 /**
  * Hello world!

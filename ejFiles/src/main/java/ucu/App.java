@@ -13,7 +13,7 @@ public class App {
           int eleccion = e.nextInt();
           switch (eleccion) {
               case 1:
-                  ejercicios.crearArchivo();
+                  ejercicios.crearArchivo("saludo");
                   break;
 
               case 2:
