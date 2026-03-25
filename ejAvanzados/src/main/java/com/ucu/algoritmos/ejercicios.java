@@ -184,4 +184,30 @@ public class ejercicios {
         }
         System.out.println("Área total de todas las figuras: " + areaTotal);
     }
+
+    // Ejercicio 9: Interface - Imprimible
+    public void ej9() {
+        System.out.println("=== Ejercicio 9: Interface Imprimible ===\n");
+
+        // Crear ArrayList de elementos Imprimibles
+        java.util.ArrayList<Imprimible> documentos = new java.util.ArrayList<>();
+
+        // Agregar facturas
+        documentos.add(new Factura(1001, 2500.50));
+        documentos.add(new Factura(1002, 1800.75));
+        documentos.add(new Factura(1003, 3200.00));
+
+        // Agregar reportes
+        documentos.add(new Reporte("Reporte Mensual de Ventas", "2026-03-25"));
+        documentos.add(new Reporte("Análisis de Inventario", "2026-03-20"));
+
+        // Imprimir todos los documentos (polimorfismo con interface)
+        System.out.println("Imprimiendo todos los documentos:\n");
+        for (Imprimible doc : documentos) {
+            doc.imprimir();
+            System.out.println();
+        }
+
+        System.out.println("Total de documentos: " + documentos.size());
+    }
 }
