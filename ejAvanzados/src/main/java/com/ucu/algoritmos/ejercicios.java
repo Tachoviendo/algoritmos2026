@@ -129,4 +129,31 @@ public class ejercicios {
         System.out.println("Descripción de la Moto con sidecar:");
         motoConSidecar.describir();
     }
+
+    // Ejercicio 7: Constructor con super()
+    public void ej7() {
+        System.out.println("=== Ejercicio 7: Cadena de constructores con super() ===\n");
+
+        System.out.println("Creando un Auto...");
+        Auto auto1 = new Auto("Ford", "Mustang", 250, 2);
+        System.out.println("Auto creado exitosamente");
+        auto1.describir();
+
+        System.out.println("\n" + "-".repeat(40) + "\n");
+
+        System.out.println("Creando una Moto...");
+        Moto moto1 = new Moto("Yamaha", "YZF-R1", 299, false);
+        System.out.println("Moto creada exitosamente");
+        moto1.describir();
+
+        System.out.println("\n" + "-".repeat(40) + "\n");
+
+        System.out.println("Probando múltiples instancias:");
+        Auto auto2 = new Auto("BMW", "Serie 3", 240, 4);
+        Auto auto3 = new Auto("Volkswagen", "Golf", 200, 5);
+        Moto moto2 = new Moto("Honda", "CBR1000RR", 280, false);
+
+        System.out.println("\nTodos los vehículos fueron creados correctamente");
+        System.out.println("usando super() para inicializar los atributos heredados.");
+    }
 }
