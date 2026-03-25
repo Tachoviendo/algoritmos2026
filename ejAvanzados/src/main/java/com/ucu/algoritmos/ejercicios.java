@@ -88,4 +88,24 @@ public class ejercicios {
         System.out.println("\n¿p1 == p2 (misma referencia)? " + (p1 == p2)); // false
         System.out.println("¿p1.equals(p2) (mismo contenido)? " + p1.equals(p2)); // true
     }
+
+    // Ejercicio 5: Atributos y métodos estáticos
+    public void ej5() {
+        System.out.println("=== Ejercicio 5: Contador con estáticos ===\n");
+
+        System.out.println("Total de contadores creados: " + Contador.getTotalCreados());
+
+        Contador c1 = new Contador();
+        System.out.println(c1);
+
+        Contador c2 = new Contador();
+        System.out.println(c2);
+
+        Contador c3 = new Contador();
+        System.out.println(c3);
+
+        System.out.println("\nTotal de contadores creados: " + Contador.getTotalCreados());
+        System.out.println("Número del primer contador: " + c1.getNumero());
+        System.out.println("Número del segundo contador: " + c2.getNumero());
+    }
 }
