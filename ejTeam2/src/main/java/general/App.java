@@ -1,6 +1,7 @@
 package general;
 import java.util.Scanner;
 
+import ejercicios.ArithmeticDemo;
 import ejercicios.PruebaAtributos;
 
 public class App {
@@ -11,12 +12,16 @@ public class App {
             try {
                 System.out.println("Ingrese un número para ejecutar un ejercicio (1 a 14) o ingrese 0 para salir: ");
                 int opcion = sc.nextInt();
+                sc.nextLine();
                 switch (opcion) {
                     case 0:
                         sc.close();
                         return;
                     case 1:
                         ejercicio1();
+                        break;
+                    case 2:
+                        ejercicio2(sc);
                         break;
                     default:
                         System.out.println("Opción invalida.");
@@ -35,6 +40,13 @@ public class App {
         pa.probarNombresVariables();
         pa.probarVariablesLocales();
         System.out.println("\n==== FIN EJERCICIO 1 ====");
+    }
+
+    public static void ejercicio2(Scanner sc){
+        System.out.println("\n==== EJERCICIO 2 ====");
+        ArithmeticDemo ad = new ArithmeticDemo();
+        ad.ejercicio(sc);
+        System.out.println("\n==== FIN EJERCICIO 2 ====");
     }
 }
 
