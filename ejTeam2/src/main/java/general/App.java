@@ -2,6 +2,7 @@ package general;
 import java.util.Scanner;
 
 import ejercicios.ArithmeticDemo;
+import ejercicios.Contador;
 import ejercicios.PruebaAtributos;
 
 public class App {
@@ -12,7 +13,7 @@ public class App {
             try {
                 System.out.println("Ingrese un número para ejecutar un ejercicio (1 a 14) o ingrese 0 para salir: ");
                 int opcion = sc.nextInt();
-                sc.nextLine();
+                sc.nextLine(); //Esto lo agrego si no se rompe todo el programa 
                 switch (opcion) {
                     case 0:
                         sc.close();
@@ -22,6 +23,9 @@ public class App {
                         break;
                     case 2:
                         ejercicio2(sc);
+                        break;
+                    case 3:
+                        ejercicio3(sc);
                         break;
                     default:
                         System.out.println("Opción invalida.");
@@ -47,6 +51,13 @@ public class App {
         ArithmeticDemo ad = new ArithmeticDemo();
         ad.ejercicio(sc);
         System.out.println("\n==== FIN EJERCICIO 2 ====");
+    }
+
+    public static void ejercicio3(Scanner sc){
+        System.out.println("\n==== EJERCICIO 3 ====");
+        Contador cont = new Contador();
+        cont.menu(sc);
+        System.out.println("\n==== FIN EJERCICIO 3 ====");
     }
 }
 
