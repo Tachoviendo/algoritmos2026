@@ -4,6 +4,7 @@ import java.util.Scanner;
 import ejercicios.ArithmeticDemo;
 import ejercicios.Contador;
 import ejercicios.PruebaAtributos;
+import ejercicios.UtilMath;
 
 public class App {
     public static void main(String[] args) {
@@ -26,6 +27,9 @@ public class App {
                         break;
                     case 3:
                         ejercicio3(sc);
+                        break;
+                    case 4:
+                        ejercicio4(sc);
                         break;
                     default:
                         System.out.println("Opción invalida.");
@@ -58,6 +62,16 @@ public class App {
         Contador cont = new Contador();
         cont.menu(sc);
         System.out.println("\n==== FIN EJERCICIO 3 ====");
+    }
+
+    public static void ejercicio4(Scanner sc){
+        System.out.println("\n==== EJERCICIO 4 ====");
+        System.out.println("Digite un número int para realizarle factorial: ");
+        UtilMath um = new UtilMath();
+        System.out.println("El factorial del numero da como resultado: " + um.factorial(sc.nextInt()));
+        System.out.println("Digte un numero long para saber si es primo y realizar la suma de pares o impares: ");
+        um.sumaParesImpares(sc.nextLong());
+        System.out.println("\n==== FIN EJERCICIO 4 ====");
     }
 }
 
