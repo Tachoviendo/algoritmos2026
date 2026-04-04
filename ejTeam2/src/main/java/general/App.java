@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import ejercicios.ArithmeticDemo;
 import ejercicios.Contador;
+import ejercicios.Marcapasos;
 import ejercicios.PruebaAtributos;
 import ejercicios.UtilMath;
 
@@ -30,6 +31,9 @@ public class App {
                         break;
                     case 4:
                         ejercicio4(sc);
+                        break;
+                    case 5:
+                        ejercicio5();
                         break;
                     default:
                         System.out.println("Opción invalida.");
@@ -72,6 +76,11 @@ public class App {
         System.out.println("Digte un numero long para saber si es primo y realizar la suma de pares o impares: ");
         um.sumaParesImpares(sc.nextLong());
         System.out.println("\n==== FIN EJERCICIO 4 ====");
+    }
+
+    public static void ejercicio5(){
+        Marcapasos mp1 = new Marcapasos(1, (short) 10);
+        System.out.println(mp1.toString());
     }
 }
 
