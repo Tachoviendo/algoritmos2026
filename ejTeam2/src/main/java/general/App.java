@@ -6,6 +6,7 @@ import ejercicios.Contador;
 import ejercicios.Marcapasos;
 import ejercicios.Multsuma;
 import ejercicios.PruebaAtributos;
+import ejercicios.StringDemo;
 import ejercicios.UtilMath;
 
 public class App {
@@ -38,6 +39,9 @@ public class App {
                         break;
                     case 6:
                         ejercicio6(sc);
+                        break;
+                    case 7:
+                        ejercicio7();
                         break;
                     default:
                         System.out.println("Opción invalida.");
@@ -97,6 +101,13 @@ public class App {
         int resultado = ms.multiplicar(vector1, vector2);
         System.out.println("El resultado es "+ resultado);
         System.out.println("\n==== FIN EJERCICIO 6 ====");
+    }
+
+    public static void ejercicio7(){
+        System.out.println("\n==== EJERCICIO 7 ====");
+        StringDemo sd = new StringDemo();
+        sd.ejercicio7();
+        System.out.println("\n==== FIN EJERCICIO 7 ====");
     }
 
     
