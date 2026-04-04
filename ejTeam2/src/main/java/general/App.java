@@ -79,8 +79,10 @@ public class App {
     }
 
     public static void ejercicio5(){
+        System.out.println("\n==== EJERCICIO 5 ====");
         Marcapasos mp1 = new Marcapasos(1, (short) 10);
         System.out.println(mp1.toString());
+        System.out.println("\n==== FIN EJERCICIO 5 ====");
     }
 }
 
