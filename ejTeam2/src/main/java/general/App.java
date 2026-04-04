@@ -4,6 +4,7 @@ import java.util.Scanner;
 import ejercicios.ArithmeticDemo;
 import ejercicios.Contador;
 import ejercicios.Marcapasos;
+import ejercicios.Multsuma;
 import ejercicios.PruebaAtributos;
 import ejercicios.UtilMath;
 
@@ -34,6 +35,9 @@ public class App {
                         break;
                     case 5:
                         ejercicio5();
+                        break;
+                    case 6:
+                        ejercicio6(sc);
                         break;
                     default:
                         System.out.println("Opción invalida.");
@@ -84,6 +88,18 @@ public class App {
         System.out.println(mp1.toString());
         System.out.println("\n==== FIN EJERCICIO 5 ====");
     }
+
+    public static void ejercicio6(Scanner sc){
+        System.out.println("\n==== EJERCICIO 6 ====");
+        Multsuma ms = new Multsuma();
+        int[] vector1 = ms.leerVector(sc);
+        int[] vector2 = ms.leerVector(sc);
+        int resultado = ms.multiplicar(vector1, vector2);
+        System.out.println("El resultado es "+ resultado);
+        System.out.println("\n==== FIN EJERCICIO 6 ====");
+    }
+
+    
 }
 
 
