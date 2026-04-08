@@ -54,6 +54,9 @@ public class App {
                     case 9:
                         ejercicio9();
                         break;
+                    case 10:
+                        ejercicio10();
+                        break;
                     default:
                         System.out.println("Opción invalida.");
                         break;
@@ -119,6 +122,35 @@ public class App {
         StringDemo sd = new StringDemo();
         sd.ejercicio7();
         System.out.println("\n==== FIN EJERCICIO 7 ====");
+    }
+
+    public static void ejercicio10(){
+        System.out.println("\n==== EJERCICIO 10 ====");
+        ContadorPalabras cp = new ContadorPalabras();
+
+        // Leer líneas desde archivo
+        String archivo = "recursos/texto_prueba.txt";
+        String[] lineas = cp.obtenerLineas(archivo);
+        System.out.println("Líneas leídas del archivo:");
+        for (String l : lineas) System.out.println("  " + l);
+
+        // Contar palabras del archivo
+        System.out.println("Total de palabras en el archivo: " + cp.contarPalabrasArchivo(archivo));
+
+        // Intersección con arreglos
+        String[] arregloA = {"frío", "sol", "lluvia", "viento", "nublado"};
+        String[] arregloB = {"sol", "frío", "calor", "nublado", "tormenta"};
+
+        String[] comunesArreglo = cp.palabrasComunesArreglo(arregloA, arregloB);
+        System.out.println("\nIntersección con arreglos:");
+        for (String p : comunesArreglo) System.out.println("  " + p);
+
+        // Intersección con colecciones
+        String[] comunesColeccion = cp.palabrasComunesColeccion(arregloA, arregloB);
+        System.out.println("Intersección con colecciones:");
+        for (String p : comunesColeccion) System.out.println("  " + p);
+
+        System.out.println("\n==== FIN EJERCICIO 10 ====");
     }
 
     public static void ejercicio9(){
