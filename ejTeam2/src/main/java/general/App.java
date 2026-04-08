@@ -6,6 +6,7 @@ import ejercicios.Contador;
 import ejercicios.Marcapasos;
 import ejercicios.Multsuma;
 import ejercicios.PruebaAtributos;
+import ejercicios.StringBuilderDemo;
 import ejercicios.StringDemo;
 import ejercicios.UtilMath;
 
@@ -42,6 +43,9 @@ public class App {
                         break;
                     case 7:
                         ejercicio7();
+                        break;
+                    case 8:
+                        ejercicio8();
                         break;
                     default:
                         System.out.println("Opción invalida.");
@@ -110,7 +114,13 @@ public class App {
         System.out.println("\n==== FIN EJERCICIO 7 ====");
     }
 
-    
+    public static void ejercicio8(){
+        System.out.println("\n==== EJERCICIO 8 ====");
+        StringBuilderDemo sbd = new StringBuilderDemo();
+        sbd.ejercicio8();
+        System.out.println("\n==== FIN EJERCICIO 8 ====");
+    }
+
 }
 
 
