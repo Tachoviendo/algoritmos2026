@@ -6,6 +6,7 @@ import ejercicios.Contador;
 import ejercicios.Marcapasos;
 import ejercicios.Multsuma;
 import ejercicios.PruebaAtributos;
+import ejercicios.AnalizadorCaracteres;
 import ejercicios.ContadorPalabras;
 import ejercicios.Principal;
 import ejercicios.ContadorPalabrasVerboso;
@@ -60,6 +61,9 @@ public class App {
                         break;
                     case 11:
                         ejercicio11(sc);
+                        break;
+                    case 13:
+                        ejercicio13();
                         break;
                     default:
                         System.out.println("Opción invalida.");
@@ -126,6 +130,15 @@ public class App {
         StringDemo sd = new StringDemo();
         sd.ejercicio7();
         System.out.println("\n==== FIN EJERCICIO 7 ====");
+    }
+
+    public static void ejercicio13(){
+        System.out.println("\n==== EJERCICIO 13 ====");
+        AnalizadorCaracteres ac = new AnalizadorCaracteres();
+        ac.mostrarValoresEnum();
+        System.out.println();
+        ac.analizar("afuera está lloviendo y hace frío, son las 3 de la tarde.");
+        System.out.println("\n==== FIN EJERCICIO 13 ====");
     }
 
     public static void ejercicio11(Scanner sc){
