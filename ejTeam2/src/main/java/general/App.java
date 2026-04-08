@@ -7,6 +7,8 @@ import ejercicios.Marcapasos;
 import ejercicios.Multsuma;
 import ejercicios.PruebaAtributos;
 import ejercicios.AnalizadorCaracteres;
+import ejercicios.Depuracion;
+import ejercicios.TransformadorT9;
 import ejercicios.ContadorPalabras;
 import ejercicios.Principal;
 import ejercicios.ContadorPalabrasVerboso;
@@ -62,8 +64,14 @@ public class App {
                     case 11:
                         ejercicio11(sc);
                         break;
+                    case 12:
+                        ejercicio12();
+                        break;
                     case 13:
                         ejercicio13();
+                        break;
+                    case 14:
+                        ejercicio14();
                         break;
                     default:
                         System.out.println("Opción invalida.");
@@ -130,6 +138,39 @@ public class App {
         StringDemo sd = new StringDemo();
         sd.ejercicio7();
         System.out.println("\n==== FIN EJERCICIO 7 ====");
+    }
+
+    public static void ejercicio14(){
+        System.out.println("\n==== EJERCICIO 14 ====");
+        TransformadorT9 t9 = new TransformadorT9();
+
+        String entrada  = "recursos/t9_entrada.txt";
+        String salida   = "recursos/t9_salida.txt";
+        String salidaInv = "recursos/t9_salida_invertida.txt";
+
+        System.out.println("Conversión directa:");
+        System.out.println("  " + t9.convertir("hola mundo"));
+
+        System.out.println("Conversión invertida:");
+        System.out.println("  " + t9.convertirInvertido("hola mundo"));
+
+        try {
+            t9.convertirArchivo(entrada, salida);
+            System.out.println("Archivo convertido -> " + salida);
+            t9.convertirArchivoInvertido(entrada, salidaInv);
+            System.out.println("Archivo invertido -> " + salidaInv);
+        } catch (Exception e) {
+            System.out.println("Error al procesar archivos: " + e.getMessage());
+        }
+
+        System.out.println("\n==== FIN EJERCICIO 14 ====");
+    }
+
+    public static void ejercicio12(){
+        System.out.println("\n==== EJERCICIO 12 ====");
+        Depuracion d = new Depuracion();
+        d.ejercicio12();
+        System.out.println("\n==== FIN EJERCICIO 12 ====");
     }
 
     public static void ejercicio13(){
