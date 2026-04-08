@@ -7,6 +7,7 @@ import ejercicios.Marcapasos;
 import ejercicios.Multsuma;
 import ejercicios.PruebaAtributos;
 import ejercicios.ContadorPalabras;
+import ejercicios.Principal;
 import ejercicios.ContadorPalabrasVerboso;
 import ejercicios.ProcesadorTexto;
 import ejercicios.ResultadoAnalisis;
@@ -56,6 +57,9 @@ public class App {
                         break;
                     case 10:
                         ejercicio10();
+                        break;
+                    case 11:
+                        ejercicio11(sc);
                         break;
                     default:
                         System.out.println("Opción invalida.");
@@ -122,6 +126,14 @@ public class App {
         StringDemo sd = new StringDemo();
         sd.ejercicio7();
         System.out.println("\n==== FIN EJERCICIO 7 ====");
+    }
+
+    public static void ejercicio11(Scanner sc){
+        System.out.println("\n==== EJERCICIO 11 ====");
+        Principal.leerEntradaArchivo("recursos/entrada.txt");
+        System.out.println();
+        Principal.leerEntradaStdin(sc);
+        System.out.println("\n==== FIN EJERCICIO 11 ====");
     }
 
     public static void ejercicio10(){
