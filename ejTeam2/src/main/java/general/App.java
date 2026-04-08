@@ -6,6 +6,10 @@ import ejercicios.Contador;
 import ejercicios.Marcapasos;
 import ejercicios.Multsuma;
 import ejercicios.PruebaAtributos;
+import ejercicios.ContadorPalabras;
+import ejercicios.ContadorPalabrasVerboso;
+import ejercicios.ProcesadorTexto;
+import ejercicios.ResultadoAnalisis;
 import ejercicios.StringBuilderDemo;
 import ejercicios.StringDemo;
 import ejercicios.UtilMath;
@@ -46,6 +50,9 @@ public class App {
                         break;
                     case 8:
                         ejercicio8();
+                        break;
+                    case 9:
+                        ejercicio9();
                         break;
                     default:
                         System.out.println("Opción invalida.");
@@ -112,6 +119,37 @@ public class App {
         StringDemo sd = new StringDemo();
         sd.ejercicio7();
         System.out.println("\n==== FIN EJERCICIO 7 ====");
+    }
+
+    public static void ejercicio9(){
+        System.out.println("\n==== EJERCICIO 9 ====");
+
+        String texto = "afuera está lloviendo y hace mucho frío hoy";
+        String[] lineas = {
+            "primera línea con varias palabras",
+            "segunda línea",
+            "tercera"
+        };
+
+        // Uso polimórfico: la variable es de tipo ProcesadorTexto pero el objeto es ContadorPalabras
+        // Esto demuestra polimorfismo: mismo tipo de referencia, distinto objeto
+        ProcesadorTexto contador = new ContadorPalabras();
+        System.out.println("Contando con ContadorPalabras:");
+        System.out.println("  Palabras en texto: " + contador.contarPalabras(texto));
+        System.out.println("  Palabras en arreglo de líneas: " + contador.contarPalabras(lineas));
+
+        // Mismo polimorfismo pero con la subclase verbosa, que sobreescribe el comportamiento
+        System.out.println("\nContando con ContadorPalabrasVerboso:");
+        ProcesadorTexto verboso = new ContadorPalabrasVerboso();
+        verboso.contarPalabras(texto);
+
+        // ResultadoAnalisis para obtener más info de una sola vez
+        System.out.println("\nAnálisis completo:");
+        ContadorPalabras cp = new ContadorPalabras("analizador-principal");
+        ResultadoAnalisis resultado = cp.analizar("primera línea\nsegunda línea\ntercera línea");
+        System.out.println(resultado.toString());
+
+        System.out.println("\n==== FIN EJERCICIO 9 ====");
     }
 
     public static void ejercicio8(){
