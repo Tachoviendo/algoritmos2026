@@ -12,7 +12,7 @@ Los ejercicios que requieren implementación de código se desarrollan directame
 
 ### Ejercicios Teóricos
 Los ejercicios que llevan información y análisis teórico (sin código) se realizan en un readme.
-- **[Link al readme]** *(ingresa aquí el enlace)*
+- [**[EJERCICIO 19]**](https://github.com/Tachoviendo/algoritmos2026/blob/main/problemSet01/teoricos/ejercicio19.md)
 
 ## 📦 Ejercicios a Entregar en Maven
 
@@ -25,10 +25,8 @@ Los ejercicios que llevan información y análisis teórico (sin código) se rea
 ## 🚀 Instrucciones de Uso
 
 1. Clona el repositorio
-2. Implementa los ejercicios en los archivos correspondientes
-3. Completa el documento teórico adjunto
-4. Realiza el commit y push con tus cambios
+2. Ejecutar App.java
 
 ---
 
-*Última actualización: 2026*
+*Última actualización: 20/04/2026*
