@@ -1,6 +1,8 @@
 com\example\clases\Biblioteca.class
 com\example\clases\Libro.class
 com\example\App.class
+com\example\clases\Nodo.class
 com\example\clases\Core.class
+com\example\clases\Lista.class
 com\example\clases\ProcesadorPrestamos.class
 com\example\clases\ProcesadorAdquisiciones.class

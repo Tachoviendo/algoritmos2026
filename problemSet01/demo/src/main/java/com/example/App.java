@@ -21,10 +21,10 @@ public class App {
                     ejercicio17();
                     break;
                 case 18:
-                    //ejercicio18();
+                    ejercicio18();
                     break;
                 case 3:
-                    //Ejercicio03.ejecutar();
+                    ejercicio19();
                     break;
                 case 4:
                     //Ejercicio04.ejecutar(sc);
@@ -67,6 +67,11 @@ public class App {
         Core.headerMessage(18);
         System.out.println("Para este ejercicio se decidió simplemente que para eliminar un elemento de una listra enlazada basta con dejar dicho elemento sin referencias, esto es porque Java elimina un objeto de memoria si este queda sin referencias, a diferencia de otros lenguajes como C/C++ que se debe eliminar manualmente. Si se quisiera reutilizar el elemento basta con dejar una referencia a este antes de eliminarlo.");
         Core.footerMessage(18);
-        
+    }
+
+    public static void ejercicio19(){
+        Core.headerMessage(19);
+        System.out.println("Revise el readme.md ");
+        Core.footerMessage(19);
     }
 }
