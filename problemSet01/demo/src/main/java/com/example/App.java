@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.example.clases.Biblioteca;
 import com.example.clases.Core;
+import com.example.clases.Conjunto;
 import com.example.clases.DirectorioSucursales;
 import com.example.clases.Sucursal;
 import com.example.clases.ProcesadorAdquisiciones;
@@ -30,6 +31,9 @@ public class App {
                     break;
                 case 23:
                     ejercicio23();
+                    break;
+                case 24:
+                    ejercicio24();
                     break;
                 case 4:
                     //Ejercicio04.ejecutar(sc);
@@ -114,5 +118,33 @@ public class App {
         dir3.listar(";");
 
         Core.footerMessage(23);
+    }
+
+    public static void ejercicio24() {
+        Core.headerMessage(24);
+
+        Conjunto<String> a = new Conjunto<>();
+        a.insertar("Matemática");
+        a.insertar("Física");
+        a.insertar("Historia");
+
+        Conjunto<String> b = new Conjunto<>();
+        b.insertar("Física");
+        b.insertar("Química");
+        b.insertar("Historia");
+
+        System.out.println("Conjunto A:");
+        a.listar();
+
+        System.out.println("\nConjunto B:");
+        b.listar();
+
+        System.out.println("\nUnión A ∪ B:");
+        a.union(b).listar();
+
+        System.out.println("\nIntersección A ∩ B:");
+        a.interseccion(b).listar();
+
+        Core.footerMessage(24);
     }
 }
