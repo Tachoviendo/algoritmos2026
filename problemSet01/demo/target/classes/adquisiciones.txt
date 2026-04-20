@@ -1,0 +1,3 @@
+001, El Quijote, 500, 3
+002, Cien años de soledad, 650, 2
+001, El Quijote, 500, 2
