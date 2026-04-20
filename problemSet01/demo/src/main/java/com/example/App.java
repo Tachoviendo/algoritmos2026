@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import com.example.clases.Biblioteca;
 import com.example.clases.Core;
+import com.example.clases.Alumno;
+import com.example.clases.Cola;
 import com.example.clases.Conjunto;
 import com.example.clases.DirectorioSucursales;
 import com.example.clases.Sucursal;
@@ -34,6 +36,9 @@ public class App {
                     break;
                 case 24:
                     ejercicio24();
+                    break;
+                case 27:
+                    ejercicio27();
                     break;
                 case 4:
                     //Ejercicio04.ejecutar(sc);
@@ -145,6 +150,77 @@ public class App {
         System.out.println("\nIntersección A ∩ B:");
         a.interseccion(b).listar();
 
+        // Parte 3: con alumnos
+        System.out.println("\n--- Parte 3: Cursos AED1 y PF ---");
+
+        Alumno a1 = new Alumno("1001", "Ana", "Garcia");
+        Alumno a2 = new Alumno("1002", "Bruno", "Lopez");
+        Alumno a3 = new Alumno("1003", "Carla", "Perez");
+        Alumno a4 = new Alumno("1004", "Diego", "Sosa");
+        Alumno a5 = new Alumno("1005", "Elena", "Rios");
+
+        Conjunto<Alumno> aed1 = new Conjunto<>();
+        aed1.insertar(a1);
+        aed1.insertar(a2);
+        aed1.insertar(a3);
+        aed1.insertar(a4);
+
+        Conjunto<Alumno> pf = new Conjunto<>();
+        pf.insertar(a3);
+        pf.insertar(a4);
+        pf.insertar(a5);
+
+        System.out.println("\nAED1:");
+        aed1.listar();
+
+        System.out.println("\nProgramación Funcional:");
+        pf.listar();
+
+        System.out.println("\n¿a3 está en AED1? " + aed1.contiene(a3));
+        System.out.println("¿a3 está en PF? " + pf.contiene(a3));
+        System.out.println("¿a1 está en PF? " + pf.contiene(a1));
+
+        System.out.println("\nUnión (matriculados en cualquiera):");
+        aed1.union(pf).listar();
+
+        System.out.println("\nIntersección (matriculados en ambos):");
+        aed1.interseccion(pf).listar();
+
         Core.footerMessage(24);
+    }
+
+    public static void ejercicio27() {
+        Core.headerMessage(27);
+
+        Cola<String> cola = new Cola<>(6);
+
+        System.out.println("--- Encolando A, B, C, D ---");
+        System.out.println("(frente y fin avanzan, el array se va llenando de izquierda a derecha)");
+        cola.poneEnCola("A");
+        cola.poneEnCola("B");
+        cola.poneEnCola("C");
+        cola.poneEnCola("D");
+
+        System.out.println("\n--- Desencolando dos elementos ---");
+        System.out.println("(sale siempre el más antiguo — FIFO)");
+        System.out.println("Desencola: " + cola.quitaDeCola());
+        System.out.println("Desencola: " + cola.quitaDeCola());
+
+        System.out.println("\n--- Encolando E y F ---");
+        System.out.println("(la circularidad permite reutilizar las posiciones 0 y 1 que quedaron libres)");
+        cola.poneEnCola("E");
+        cola.poneEnCola("F");
+
+        System.out.println("\n--- Vaciando la cola ---");
+        System.out.println("(el orden de salida demuestra que C entró antes que E y F — FIFO respetado)");
+        while (!cola.estaVacia()) {
+            System.out.println("  Desencola: " + cola.quitaDeCola());
+        }
+
+        System.out.println("\n--- Intento de desencolar con cola vacía ---");
+        System.out.println("(el TDA detecta el error sin romper el programa)");
+        cola.quitaDeCola();
+
+        Core.footerMessage(27);
     }
 }
