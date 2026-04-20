@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import com.example.clases.Biblioteca;
 import com.example.clases.Core;
+import com.example.clases.DirectorioSucursales;
+import com.example.clases.Sucursal;
 import com.example.clases.ProcesadorAdquisiciones;
 import com.example.clases.ProcesadorPrestamos;
 
@@ -23,8 +25,11 @@ public class App {
                 case 18:
                     ejercicio18();
                     break;
-                case 3:
+                case 19:
                     ejercicio19();
+                    break;
+                case 23:
+                    ejercicio23();
                     break;
                 case 4:
                     //Ejercicio04.ejecutar(sc);
@@ -73,5 +78,41 @@ public class App {
         Core.headerMessage(19);
         System.out.println("Revise el readme.md ");
         Core.footerMessage(19);
+    }
+
+    public static void ejercicio23() {
+        Core.headerMessage(23);
+        String base = "src/main/resources/";
+
+        // Tarea 1: cargar suc1.txt
+        DirectorioSucursales dir = new DirectorioSucursales();
+        dir.cargarDesdeArchivo(base + "suc1.txt");
+        System.out.println("Ciudades cargadas:");
+        dir.listar();
+        System.out.println("Total de elementos: " + dir.cantidad());
+
+        // Tarea 2: eliminar Chicago, listar, ver qué sigue a Hong Kong
+        dir.quitar("Chicago");
+        System.out.println("\nTras eliminar Chicago:");
+        dir.listar();
+        Sucursal siguienteAHK = dir.siguienteDe("Hong Kong");
+        System.out.println("\nCiudad siguiente a Hong Kong: " + (siguienteAHK != null ? siguienteAHK.getCiudad() : "ninguna"));
+
+        // Tarea 3: cargar suc2.txt, eliminar Shenzen y Tokio
+        DirectorioSucursales dir2 = new DirectorioSucursales();
+        dir2.cargarDesdeArchivo(base + "suc2.txt");
+        System.out.println("\nsuc2.txt cargado. Ciudades: " + dir2.cantidad());
+        dir2.quitar("Shenzen");
+        dir2.quitar("Tokio");
+        System.out.println("Tras eliminar Shenzen y Tokio. Ciudades restantes: " + dir2.cantidad());
+        System.out.println("¿Está vacío? " + dir2.estaVacio());
+
+        // Tarea 4: cargar suc3.txt, invocar listar(";")
+        DirectorioSucursales dir3 = new DirectorioSucursales();
+        dir3.cargarDesdeArchivo(base + "suc3.txt");
+        System.out.println("\nsuc3.txt - Imprimir(\";\"):");
+        dir3.listar(";");
+
+        Core.footerMessage(23);
     }
 }
