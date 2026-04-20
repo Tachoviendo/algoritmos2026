@@ -1,19 +1,19 @@
 package com.example.clases;
-import java.util.ArrayList;
-import java.util.Comparator;
 
 public class Biblioteca {
-    private ArrayList<Libro> catalogo;
+    private Lista<Libro> catalogo;
 
     public Biblioteca() {
-        catalogo = new ArrayList<>();
+        catalogo = new Lista<>();
     }
 
     public Libro buscarLibro(String codigo) {
-        for (Libro libro : catalogo) {
-            if (libro.getCodigo().equals(codigo)) {
-                return libro;
+        Nodo<Libro> aux = catalogo.getPrimero();
+        while (aux!=null){
+            if (aux.dato.getCodigo().equals(codigo)){
+                return aux.dato;
             }
+            aux = aux.siguiente;
         }
         return null;
     }
@@ -23,7 +23,7 @@ public class Biblioteca {
 
         if (libro == null) {
             libro = new Libro(codigo, titulo, precio, cantidad);
-            catalogo.add(libro);
+            catalogo.insertar(libro);
         } else {
             libro.agregarEjemplares(cantidad);
         }
@@ -45,10 +45,11 @@ public class Biblioteca {
     }
 
     public void listarLibros() {
-        catalogo.sort(Comparator.comparing(Libro::getTitulo));
+        Nodo<Libro> aux = catalogo.getPrimero();
 
-        for (Libro libro : catalogo) {
-            System.out.println(libro);
+        while (aux != null){
+            System.out.println(aux.dato);
+            aux = aux.siguiente;
         }
     }
 }

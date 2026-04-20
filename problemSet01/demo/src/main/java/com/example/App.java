@@ -3,6 +3,7 @@ package com.example;
 import java.util.Scanner;
 
 import com.example.clases.Biblioteca;
+import com.example.clases.Core;
 import com.example.clases.ProcesadorAdquisiciones;
 import com.example.clases.ProcesadorPrestamos;
 
@@ -19,8 +20,8 @@ public class App {
                 case 17:
                     ejercicio17();
                     break;
-                case 2:
-                    //Ejercicio02.ejecutar(sc);
+                case 18:
+                    //ejercicio18();
                     break;
                 case 3:
                     //Ejercicio03.ejecutar();
@@ -51,6 +52,7 @@ public class App {
     }
 
     public static void ejercicio17(){
+        Core.headerMessage(17);
         Biblioteca biblioteca = new Biblioteca();
 
         ProcesadorAdquisiciones.procesar("demo/src/main/resources/adquisiciones.txt", biblioteca);
@@ -58,5 +60,13 @@ public class App {
 
         System.out.println("\nCatálogo final:");
         biblioteca.listarLibros();
+        Core.footerMessage(17);
+    }
+
+    public static void ejercicio18(){
+        Core.headerMessage(18);
+        System.out.println("Para este ejercicio se decidió simplemente que para eliminar un elemento de una listra enlazada basta con dejar dicho elemento sin referencias, esto es porque Java elimina un objeto de memoria si este queda sin referencias, a diferencia de otros lenguajes como C/C++ que se debe eliminar manualmente. Si se quisiera reutilizar el elemento basta con dejar una referencia a este antes de eliminarlo.");
+        Core.footerMessage(18);
+        
     }
 }

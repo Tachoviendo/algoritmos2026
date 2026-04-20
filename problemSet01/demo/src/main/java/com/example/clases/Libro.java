@@ -34,8 +34,8 @@ public class Libro {
     }
 
     public int prestarEjemplares(int cantidad) {
-        int prestados = Math.min(cantidad, this.cantidadDisponible);
-        this.cantidadDisponible -= prestados;
+        int prestados = Math.min(cantidad, cantidadDisponible);
+        cantidadDisponible -= prestados;
         return prestados;
     }
 
