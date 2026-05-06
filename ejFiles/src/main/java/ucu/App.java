@@ -27,11 +27,11 @@ public class App {
                   ejercicios.ejercicio4();
                   break;
                 
-            /*
               case 5:
-                  ejs.ej5();
+                  ejercicios.ejercicio5();
                   break;
-
+        
+            /*
               case 6:
                   ejs.ej6();
                   break;

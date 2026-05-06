@@ -39,18 +39,30 @@ public class ejercicios {
                 lineas.add(linea);
                 linea = br.readLine();
             }
-            
-            return lineas;
+
+            br.close();
+
         } catch (IOException e) {
             e.printStackTrace();
-   
+
         }
         return lineas;
 
     }
 
+    public static void escribirAlFinal(String archivo, String linea){
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(archivo, true));
+            bw.write(linea);
+            bw.newLine();
+            bw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void ejercicio1(){
-        BufferedWriter bw = new BufferedWriter(ejercicios.crearArchivo("saludo.txt"));
+        BufferedWriter bw = new BufferedWriter(ejercicios.crearArchivo("saludo"));
         try {
             bw.write("Hola");
             bw.newLine();
@@ -58,13 +70,14 @@ public class ejercicios {
             bw.newLine();
             bw.write("Manejo de Archivos clásico");
 
-   
+            bw.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-            
-        
+
+
 
     }
 
@@ -103,6 +116,11 @@ public class ejercicios {
 
     public static void ejercicio4() {
         System.out.println("La cantidad de lineas son: " + ejercicios.leerArchivo("frutas.txt").size());
+    }
+
+    public static void ejercicio5() {
+        ejercicios.escribirAlFinal("frutas.txt", "kiwi");
+        ejercicios.escribirAlFinal("frutas.txt", "Uva");
     }
     
 }

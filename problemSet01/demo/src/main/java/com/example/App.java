@@ -7,6 +7,7 @@ import com.example.clases.Core;
 import com.example.clases.Alumno;
 import com.example.clases.Cola;
 import com.example.clases.Conjunto;
+import com.example.clases.Expresion;
 import com.example.clases.DirectorioSucursales;
 import com.example.clases.Sucursal;
 import com.example.clases.ProcesadorAdquisiciones;
@@ -36,6 +37,9 @@ public class App {
                     break;
                 case 24:
                     ejercicio24();
+                    break;
+                case 26:
+                    ejercicio26();
                     break;
                 case 27:
                     ejercicio27();
@@ -222,5 +226,31 @@ public class App {
         cola.quitaDeCola();
 
         Core.footerMessage(27);
+    }
+
+    public static void ejercicio26() {
+        Core.headerMessage(26);
+
+        Expresion exp = new Expresion(null);
+
+        String[] casos = {
+            "{}{}{}",
+            "{{{}}}",
+            "{{}{}}",
+            "{{}{{}}}",
+            "{{}{{}",   // mal: falta cerrar
+            "{{}{{}}",  // mal: falta cerrar
+            "}{}",      // mal: cierra antes de abrir
+            "",         // vacío: válido
+        };
+
+        for (String caso : casos) {
+            java.util.List<Character> lista = new java.util.ArrayList<>();
+            for (char c : caso.toCharArray()) lista.add(c);
+            boolean resultado = exp.controlCorchetes(lista);
+            System.out.println("\"" + caso + "\" → " + (resultado ? "BIEN formada" : "MAL formada"));
+        }
+
+        Core.footerMessage(26);
     }
 }
