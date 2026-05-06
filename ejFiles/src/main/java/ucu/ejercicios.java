@@ -122,5 +122,34 @@ public class ejercicios {
         ejercicios.escribirAlFinal("frutas.txt", "kiwi");
         ejercicios.escribirAlFinal("frutas.txt", "Uva");
     }
-    
+
+    public static void ejercicio7() {
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter("copia_frutas.txt"));
+            for (String linea : ejercicios.leerArchivo("frutas.txt")) {
+                bw.write(linea);
+                bw.newLine();
+            }
+            bw.close();
+            System.out.println("Archivo copiado exitosamente a copia_frutas.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void ejercicio6() {
+        boolean encontrado = false;
+        for (String linea : ejercicios.leerArchivo("frutas.txt")) {
+            if (linea.contains("Banana")) {
+                encontrado = true;
+                break;
+            }
+        }
+        if (encontrado) {
+            System.out.println("La palabra 'Banana' existe en el archivo.");
+        } else {
+            System.out.println("La palabra 'Banana' NO existe en el archivo.");
+        }
+    }
+
 }
