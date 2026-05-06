@@ -123,6 +123,33 @@ public class ejercicios {
         ejercicios.escribirAlFinal("frutas.txt", "Uva");
     }
 
+    public static void ejercicio8() {
+        for (String linea : ejercicios.leerArchivo("frutas.txt")) {
+            if (linea.length() > 5) {
+                System.out.println(linea);
+            }
+        }
+    }
+
+    public static void ejercicio9() {
+        String[] lineas = {"Linea1", "Linea2", "Linea3"};
+        ManejadorArchivos m = new ManejadorArchivos();
+        m.escribirArchivo("prueba", lineas);
+        m.leerArchivo("prueba.txt");
+    }
+
+    public static void ejercicio10() {
+        ArrayList<String> lineas = ejercicios.leerArchivo("notas.txt");
+        double suma = 0;
+        for (String linea : lineas) {
+            suma += Double.parseDouble(linea.trim());
+        }
+        int cantidad = lineas.size();
+        System.out.println("Suma: " + suma);
+        System.out.println("Cantidad: " + cantidad);
+        System.out.println("Promedio: " + (suma / cantidad));
+    }
+
     public static void ejercicio7() {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("copia_frutas.txt"));

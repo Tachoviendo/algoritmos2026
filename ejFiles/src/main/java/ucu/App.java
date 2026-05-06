@@ -39,6 +39,18 @@ public class App {
                   ejercicios.ejercicio7();
                   break;
 
+              case 8:
+                  ejercicios.ejercicio8();
+                  break;
+
+              case 9:
+                  ejercicios.ejercicio9();
+                  break;
+
+              case 10:
+                  ejercicios.ejercicio10();
+                  break;
+
             /*
               case 6:
                   ejs.ej6();
