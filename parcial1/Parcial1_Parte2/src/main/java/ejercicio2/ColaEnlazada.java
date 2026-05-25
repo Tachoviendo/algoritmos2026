@@ -53,9 +53,32 @@ public class ColaEnlazada<T> {
     }
 
     // ====== A IMPLEMENTAR ======
-    public static ColaEnlazada<Integer> intercalar(
-            ColaEnlazada<Integer> c1, ColaEnlazada<Integer> c2) {
-        // TODO
-        return null;
+    public static ColaEnlazada<Integer> intercalar( ColaEnlazada<Integer> c1, ColaEnlazada<Integer> c2) {
+        
+        ColaEnlazada<Integer> res = new ColaEnlazada<>();
+        
+        // el primer caso es que ambas colas tengan elementos. entonces voy pickeando uno y uno y me voy formando el resultado. 
+        while (!c1.estaVacia() && !c2.estaVacia()){
+            res.encolar(c1.desencolar());
+            res.encolar(c2.desencolar());
+
+        }
+        // Si c1 tenia mas elementos que c2. los paso de una para el resultado. 
+        while (!c1.estaVacia()){
+            res.encolar(c1.desencolar());
+        }
+        
+        // Y viceversa, si pasa lo contrario hago lo analogo
+        while (!c2.estaVacia()){
+            res.encolar(c2.desencolar());
+        }
+
+    
+
+
+
+
+
+        return res;
     }
 }
