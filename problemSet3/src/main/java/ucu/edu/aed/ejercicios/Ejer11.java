@@ -14,10 +14,14 @@ import java.util.Map;
 */
 public class Ejer11 {
     public static void ejecutar(){
+        System.out.println("--- ANALISIS ---");
         System.out.println("Se cargó el archivo: libro-generico.txt\n");
         List<String> lineas = Soporte.cargarArchivo("ut03/libro-generico.txt");
         Map<String,Integer> ocurrencias = new HashMap<>();
         ocurrencias = ContadorPalabras.listarOcurrencias(lineas);
         ContadorPalabras.imprimirMayorOcurrencia(ocurrencias);
+
+        System.out.println("--- GRAFICO ---");
+        GraficadorOcurrencias.graficarTop10(ocurrencias);
     }
 }

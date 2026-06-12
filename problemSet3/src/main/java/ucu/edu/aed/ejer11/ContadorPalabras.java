@@ -11,6 +11,7 @@ public class ContadorPalabras {
         for (String linea : texto){
             String[] palabras = linea.toLowerCase().replaceAll("[^a-zñáéíóú\\s]", "").split("\\s+");
             for (String palabra: palabras){
+                if (palabra.isEmpty()) continue;
                 ocurrencias.put(palabra, ocurrencias.getOrDefault(palabra, 0)+1);
             }
         }
