@@ -3,7 +3,7 @@ package com.ucu.ejercicio01;
 import clases.Arista;
 import clases.Grafo;
 import clases.Vertice;
-import util.UtilGrafoDirigido;
+import clases.UtilGrafoDirigido;
 
 public class D1ConsultasBasicas {
 
