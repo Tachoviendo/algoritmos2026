@@ -1,6 +1,6 @@
 package com.ucu.clases;
 
-import clases.Grafo;
+import com.ucu.clases.Grafo;
 
 public class UtilGrafoDirigido {
 

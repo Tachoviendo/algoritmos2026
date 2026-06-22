@@ -15,7 +15,7 @@ public class D5CiclosTopologico {
         System.out.println("Grafo V0–V6:");
 
         if(tieneCiclo(gCiclo)) {
-            System.out.println("Contiene ciclo → V0 → V3 → V2 → V0");
+            System.out.println("Contiene ciclo -> V0 -> V3 -> V2 -> V0");
         }
 
         System.out.println("\nGrafo C1–C5:");

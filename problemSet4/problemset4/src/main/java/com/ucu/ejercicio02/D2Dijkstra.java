@@ -1,9 +1,9 @@
 package com.ucu.ejercicio02;
 
-import clases.Arista;
-import clases.Grafo;
-import clases.Vertice;
-import clases.UtilGrafoDirigido;
+import com.ucu.clases.Arista;
+import com.ucu.clases.Grafo;
+import com.ucu.clases.Vertice;
+import com.ucu.clases.UtilGrafoDirigido;
 
 import java.util.*;
 
@@ -28,7 +28,7 @@ public class D2Dijkstra {
                         + distancias.get("V6"));
 
         System.out.println(
-                "Camino V2→V6 = "
+                "Camino V2->V6 = "
                         + reconstruirCamino(
                                 g,
                                 "V2",

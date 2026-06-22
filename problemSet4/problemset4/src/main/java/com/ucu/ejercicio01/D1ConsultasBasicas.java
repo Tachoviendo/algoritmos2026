@@ -1,9 +1,9 @@
 package com.ucu.ejercicio01;
 
-import clases.Arista;
-import clases.Grafo;
-import clases.Vertice;
-import clases.UtilGrafoDirigido;
+import com.ucu.clases.Arista;
+import com.ucu.clases.Grafo;
+import com.ucu.clases.Vertice;
+import com.ucu.clases.UtilGrafoDirigido;
 
 public class D1ConsultasBasicas {
 
