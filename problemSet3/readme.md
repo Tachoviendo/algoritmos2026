@@ -1,5 +1,3 @@
-## Acerca de
-Entrega de la materia algoritmos y estructuras de datos dictada en la Universidad Católica del Uruguay.
 
 ## Ejercicios realizados
 Se realizaron los ejercicios 5, 7, 9, 11, 12, 13, 14, 15, 16.

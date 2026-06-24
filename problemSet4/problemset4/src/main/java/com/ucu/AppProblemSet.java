@@ -5,6 +5,7 @@ import com.ucu.ejercicio02.D2Dijkstra;
 import com.ucu.ejercicio03.D3Floyd;
 import com.ucu.ejercicio04.D4Warshall;
 import com.ucu.ejercicio05.D5CiclosTopologico;
+import com.ucu.ejercicio06.ND1Conexidad;
 
 public class AppProblemSet {
 
@@ -35,9 +36,10 @@ public class AppProblemSet {
         System.out.println("=================================");
         D5CiclosTopologico.ejecutar();
 
-        System.out.println("\n=================================");
-        System.out.println("            FIN");
-        System.out.println("=================================");
+        System.out.println("\nND1 - CONEXIDAD");
+        ND1Conexidad.ejecutar();
+
+        System.out.println("\nFIN");
     }
 
 }
