@@ -7,6 +7,7 @@ import com.ucu.ejercicio04.D4Warshall;
 import com.ucu.ejercicio05.D5CiclosTopologico;
 import com.ucu.ejercicio06.ND1Conexidad;
 import com.ucu.ejercicio07.ND2Prim;
+import com.ucu.ejercicio08.ND3Kruskal;
 
 public class AppProblemSet {
 
@@ -42,6 +43,9 @@ public class AppProblemSet {
 
         System.out.println("\nND2 - PRIM");
         ND2Prim.ejecutar();
+
+        System.out.println("\nND3 - KRUSKAL");
+        ND3Kruskal.ejecutar();
 
         System.out.println("\nFIN");
     }
