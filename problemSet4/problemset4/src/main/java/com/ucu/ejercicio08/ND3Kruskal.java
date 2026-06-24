@@ -76,9 +76,7 @@ public class ND3Kruskal {
                 if (!vistas.contains(clave)) {
                     vistas.add(clave);
                     resultado.add(new int[]{
-                            Math.min(origen, destino),
-                            Math.max(origen, destino),
-                            a.getCosto()});
+                            origen, destino, a.getCosto()});
                 }
             }
         }
